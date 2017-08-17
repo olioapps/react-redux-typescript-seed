@@ -60,3 +60,12 @@ export function Navbar(props: NavbarProps): JSX.Element {
     )
 }
 ```
+
+#### Helpful VsCode workplace settings
+```js
+"files.exclude": {
+    "node_modules/": true,
+    "build/": true,
+    "**/*.css": true
+}
+```
