@@ -29,7 +29,7 @@ login = (username: string, password: string): HandledResp => {
 #### Includes component library [blueprintjs](http://blueprintjs.com//docs/)
 - checkout src/components/progress_spinner/progress_spinner.tsx
 
-#### Uses [css modules](https://github.com/gajus/react-css-modules/blob/master/README.md#css-modules) and [blueprint css](http://blueprintjs.com//docs/#core/components/navbar.css-api)
+#### Includes [css modules](https://github.com/gajus/react-css-modules/blob/master/README.md#css-modules) and [blueprint css](http://blueprintjs.com//docs/#core/components/navbar.css-api)
 
 ```js
 import * as React from "react"
