@@ -3,13 +3,13 @@ A jumping off point for building a frontend app
 
 ### Getting started
 
-##### Clone repo
+#### Clone repo
 - cd into cloned repo
 - yarn install
 - yarn start
 - garbage creds will log you in
 
-##### Getting login working with your backend
+#### Getting login working with your backend
 - on line 30 of client.ts replace "url here" with your root url
 - then if you're posting your creds to the backend change login method to something like this
 ```js
@@ -26,10 +26,10 @@ login = (username: string, password: string): HandledResp => {
 ```
 - then uncomment code in session_sagas .ts
 
-##### Includes component library [blueprintjs](http://blueprintjs.com//docs/)
+#### Includes component library [blueprintjs](http://blueprintjs.com//docs/)
 - checkout src/components/progress_spinner/progress_spinner.tsx
 
-##### Uses [css modules](https://github.com/gajus/react-css-modules/blob/master/README.md#css-modules) and [blueprint css](http://blueprintjs.com//docs/#core/components/navbar.css-api)
+#### Uses [css modules](https://github.com/gajus/react-css-modules/blob/master/README.md#css-modules) and [blueprint css](http://blueprintjs.com//docs/#core/components/navbar.css-api)
 
 ```js
 import * as React from "react"
