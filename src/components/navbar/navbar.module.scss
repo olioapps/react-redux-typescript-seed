@@ -1,0 +1,104 @@
+@import "../../assets/colors.scss";
+
+// navbar colors
+$nav-bar-app-selector-color: $white;
+
+.max_width {
+    max-width: 1260px;
+}
+
+.nav_bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $nav-bar-bg;
+    color: $nav-bar-color;
+}
+
+.container {
+    display: flex;
+    flex: 1 0 100%;
+    justify-content: space-between;
+    composes: max_width;
+}
+
+.app_selector_icon {
+    display: flex;
+    align-items: center;
+    margin-right: 11px;
+}
+
+.app_selector {
+    display: flex;
+    flex-direction: column;
+    color: $nav-bar-app-selector-color !important;
+    margin-right: 12px;
+}
+
+.app_selector_button {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: -10px;
+
+    span {
+        font-family: "Nunito Sans";
+        line-height: 1;
+        text-align: left;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.app_menu_popover {
+    height: 100%;
+}
+
+.app_selector_title {
+    font-size: 13px;
+}
+
+.app_selector_subtitle {
+    font-size: 11px;
+}
+
+.app_selector_menu {
+    min-width: 360px;
+
+    li {
+        display: flex;
+        flex: 1 0 100%;
+        justify-content: space-between;
+    }
+
+    .menu_item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        img {
+            margin-right: 9px;
+        }
+
+        .item_left {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.user_menu {
+    color: $user-menu-color !important;
+    padding-right: 0;
+}
+
+.user_menu_chevron {
+    color: $user-menu-chev-color !important;
+}
+
+.user_name {
+    padding-right: 12px;
+}

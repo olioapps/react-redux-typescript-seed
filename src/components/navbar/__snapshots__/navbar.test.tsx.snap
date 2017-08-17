@@ -1,0 +1,21 @@
+exports[`test renders a snapshot 1`] = `
+<nav
+  className="pt-navbar .modifier nav_bar">
+  <div
+    className="container">
+    <div
+      className="pt-navbar-group pt-align-right">
+      <button
+        className="pt-button pt-minimal user_menu">
+        <span
+          className="user_name"
+          onClick={[Function]}>
+          Test
+        </span>
+        <span
+          className="pt-icon-standard pt-icon-chevron-down user_menu_chevron" />
+      </button>
+    </div>
+  </div>
+</nav>
+`;

@@ -1,0 +1,53 @@
+// actual colors
+$primary-gray-transparent: rgba(204,208,211, 0.34);
+$silver-transparent: rgba(186,186,186,0.00);
+$silver-semi-transparent: rgba(186,186,186,0.05);
+$black-semi-transparent: rgba(0,0,0,0.08);
+$black-semi-transparent2:rgba(0,0,0,0.5);
+$white-semi-transparent: rgba(255,255,255,0.22);
+$white-transparent: rgba(255,255,255,0.05);
+$ebony-clay-semi-transparent: rgba(35,44,51,0.21);
+$porcelain-semi-transparent: rgba(235,236,237,0.26);
+$oslo-gray-semi-transparent: rgba(130,134,138, 0.34);
+$mirage-semi-transparent: rgba(16, 22, 26, 0.9);
+$mirage: #1E2937;
+$mirage2: #1D2836;
+$iron: #D2D3D5;
+$iron2: #CCD0D3;
+$iron3: #E4E6E8;
+$porcelain: #EBECED;
+$white: white;
+$black: black;
+$azureRadiance: #0093FF;
+$azureRadiance2: #00A7FE;
+$azureRadiance3: #00A6FF;
+$black-haze: #FAFBFB;
+$pale-sky: #64707F;
+$pale-sky2: #647080;
+$malachite: #00C72F;
+$red-robin: #E30032;
+$tangerine: #fc8a1e;
+
+
+// global semantic colors
+$total-bg: $porcelain;
+$nav-bar-bg: $mirage2;
+$nav-bar-color: $white;
+$nav-bar-app-selector-color: $white;
+$user-menu-chev-color: $white;
+$user-menu-color: $white;
+$modal-bg: $white;
+$modal-bkdrop-bg: $mirage-semi-transparent;
+$dialog-sh-bg: $porcelain-semi-transparent;
+$dialog-sh-color: $pale-sky;
+$dialog-link-color: $azureRadiance2;
+$copy-link-btn-border: $oslo-gray-semi-transparent;
+$close-bg: $white;
+$close-btn-color: $mirage2;
+
+$num-bg: $white;
+
+$build-drawer-pass-bar: $malachite;
+$build-drawer-fail-bar: $red-robin;
+$build-drawer-warning-bar: $tangerine;
+$build-drawer-divider-silver: $iron2;

@@ -1,0 +1,14 @@
+@import "../../assets/colors.scss";
+
+.max_width {
+    max-width: 1260px;
+}
+
+.dashboard {
+    display: flex;
+    flex: 1 0 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

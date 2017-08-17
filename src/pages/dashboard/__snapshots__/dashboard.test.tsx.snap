@@ -1,0 +1,37 @@
+exports[`test renders a snapshot 1`] = `
+<div
+  className="dashboard">
+  <nav
+    className="pt-navbar .modifier nav_bar">
+    <div
+      className="container">
+      <div
+        className="pt-navbar-group pt-align-right">
+        <button
+          className="pt-button pt-minimal user_menu">
+          <span
+            className="user_name"
+            onClick={[Function]}>
+            Some User (click here to logout)
+          </span>
+          <span
+            className="pt-icon-standard pt-icon-chevron-down user_menu_chevron" />
+        </button>
+      </div>
+    </div>
+  </nav>
+  <br />
+  <br />
+  <button
+    className="pt-button button"
+    disabled={undefined}
+    onClick={undefined}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    type="button">
+    <span>
+      Hi there
+    </span>
+  </button>
+</div>
+`;

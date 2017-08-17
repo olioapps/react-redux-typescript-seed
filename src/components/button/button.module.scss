@@ -1,0 +1,45 @@
+@import "../../assets/colors.scss";
+
+// semantic colors
+$btn-bg: $white;
+$btn-bg-img-grad-start: $silver-transparent;
+$btn-bg-img-grad-end: $silver-semi-transparent;
+$btn-box-shadow: $black-semi-transparent;
+$btn-hover-darken: $white;
+$btn-primary-bg: $azureRadiance;
+$btn-primary-bg-img-grad-start: $white-semi-transparent;
+$btn-primary-bg-img-grad-end: $white-transparent;
+$btn-primary-color: $white;
+$btn-primary-hover-darken: $azureRadiance;
+$btn-primary-box-shadow: $ebony-clay-semi-transparent;
+
+.button {
+    background: $btn-bg !important;
+    background-image: linear-gradient(-180deg, $btn-bg-img-grad-start 0%, $btn-bg-img-grad-end 99%) !important;
+    box-shadow: 0 1px 0 0 $btn-box-shadow;
+    border-radius: 4px;
+
+    padding: 0 14px;
+
+    font-size: 11px;
+
+    &:hover {
+        background: darken($btn-hover-darken, 2) !important;
+    }
+}
+
+.primary {
+    background: $btn-primary-bg !important;
+    background-image: linear-gradient(-180deg, $btn-primary-bg-img-grad-start 2%, $btn-primary-bg-img-grad-end 99%) !important;
+    box-shadow: 0 1px 1px 0 $btn-primary-box-shadow;
+    border-radius: 4px;
+    color: $btn-primary-color !important;
+    > span {
+        color: $btn-primary-color !important
+    }
+
+    &:hover {
+        background: darken($btn-primary-hover-darken, 2) !important;
+        background-image: linear-gradient(-180deg, $btn-primary-bg-img-grad-start 2%, $btn-primary-bg-img-grad-end 99%) !important;
+    }
+}

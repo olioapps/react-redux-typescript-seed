@@ -1,0 +1,66 @@
+@import "../../assets/colors.scss";
+
+// semantic colors
+$login-bg: $mirage;
+$login-box-bg: $white;
+$login-box-border: $iron;
+
+.page {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    .bg {
+        position: absolute;
+        background-color: $login-bg;
+        min-height: 250px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .box {
+        background: $login-box-bg;
+        width: 380px;
+        height: 345px;
+        border-radius: 4px;
+        border: 1px solid $login-box-border;
+        margin: 0 auto;
+        z-index: 20;
+        margin-top: 65px;
+        margin-bottom: 20px;
+    }
+    .form {
+        width: 290px;
+        margin: 0 auto;
+        text-align: left;
+
+        .input,
+        .button {
+            width: 100%;
+        }
+        .label {
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+    .h3 {
+        margin-top: 40px;
+        margin-bottom: 10px;
+        font-weight: normal;
+    }
+
+    .error {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: $red-robin;
+        font-size: 16px;
+        height: 46px;
+
+    }
+}

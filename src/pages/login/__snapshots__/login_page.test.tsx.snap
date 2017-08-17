@@ -1,0 +1,60 @@
+exports[`test renders a snapshot 1`] = `
+<div
+  className="page">
+  <div
+    className="bg" />
+  <div
+    className="box">
+    <h3
+      className="h3">
+      Log in
+    </h3>
+    <div
+      className="error">
+      
+    </div>
+    <div
+      className="form">
+      <label
+        className="pt-label label">
+        Email
+        <input
+          autoFocus={true}
+          className="pt-input input"
+          name="username"
+          onChange={[Function]}
+          placeholder="your@email.com"
+          type="email"
+          value="" />
+      </label>
+      <label
+        className="pt-label label">
+        Password
+        <input
+          className="pt-input input"
+          name="password"
+          onChange={[Function]}
+          placeholder="••••••••••••••••"
+          type="password"
+          value="" />
+      </label>
+      <button
+        className="pt-button button primary pt-intent-primary pt-large button"
+        disabled={undefined}
+        kind="primary"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        type="button">
+        <span>
+          Log in
+        </span>
+      </button>
+    </div>
+  </div>
+  <a
+    href="#">
+    Forgot password?
+  </a>
+</div>
+`;

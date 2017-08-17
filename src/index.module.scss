@@ -1,0 +1,12 @@
+$icon-font-path: "../node_modules/@blueprintjs/core/resources/icons";
+
+@import "../node_modules/@blueprintjs/core/dist/blueprint.css";
+@import "../node_modules/@blueprintjs/core/src/common/icons";
+@import "../node_modules/@blueprintjs/core/src/common/react-transition";
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,600");
+
+:global(body) {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif, "Icons16" !important;
+}
