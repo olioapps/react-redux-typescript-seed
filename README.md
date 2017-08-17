@@ -1,3 +1,6 @@
+# react-redux-typescript-seed
+A jumping off point for building a frontend app
+
 ## Clone repo
 - cd into cloned repo
 - yarn install
