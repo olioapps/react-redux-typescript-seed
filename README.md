@@ -3,10 +3,11 @@ A jumping off point for building a frontend application
 
 ### Getting started
 
-#### Helpful links if you're new to TypeScript or Redux
+#### Helpful links if you're new to TypeScript, Redux, or React Router v4
 - [TypeScript](https://github.com/Microsoft/TypeScript-React-Starter#creating-a-component)
 - [Redux](http://redux.js.org/#watch-the-30-free-videos)
 - [react-redux-typescript-guide](https://github.com/piotrwitek/react-redux-typescript-guide#react)
+- [React Router](https://reacttraining.com/react-router/web/guides/philosophy)
 
 #### Get project running
 - cd into cloned repo
