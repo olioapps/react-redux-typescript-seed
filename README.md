@@ -32,6 +32,26 @@ login = (username: string, password: string): HandledResp => {
 ```
 - then uncomment code in session_sagas .ts
 
+#### Adding a route
+- update src/index.tsx
+```js
+...
+import YourComponent from "./pages/your_component/your_component"
+
+ReactDOM.render(
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <div>
+                <PublicRoute path="/" component={pageShell(LoginPage)}/>
+                <PrivateRoute path="/dashboard" component={pageShell(Dashboard)}/>
+                <PrivateRoute path="/your_route" component={pageShell(YourComponent)}/>
+            </div>
+        </ConnectedRouter>
+    </Provider>,
+    document.getElementById("root"),
+)
+```
+
 #### Includes component library [blueprintjs](http://blueprintjs.com//docs/)
 - checkout src/components/progress_spinner/progress_spinner.tsx
 
