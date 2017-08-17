@@ -1,7 +1,7 @@
 # react-redux-typescript-seed
 A jumping off point for building a frontend app
 
-## Getting started
+### Getting started
 
 ##### Clone repo
 - cd into cloned repo
