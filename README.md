@@ -6,6 +6,7 @@ A jumping off point for building a frontend application
 #### Helpful links if you're new to TypeScript or Redux
 - [TypeScript](https://github.com/Microsoft/TypeScript-React-Starter#creating-a-component)
 - [Redux](http://redux.js.org/#watch-the-30-free-videos)
+- [react-redux-typescript-guide](https://github.com/piotrwitek/react-redux-typescript-guide#react)
 
 #### Get project running
 - cd into cloned repo
