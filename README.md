@@ -13,7 +13,7 @@ A jumping off point for building a frontend application
 - yarn start
 - garbage creds will log you in
 
-#### Getting login working with your backend
+#### Get login working with your backend
 - on line 30 of client.ts replace "url here" with your root url
 - then if you're posting your creds to the backend change login method to something like this
 ```js
