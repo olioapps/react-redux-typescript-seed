@@ -1,13 +1,13 @@
 # react-redux-typescript-seed
-A jumping off point for building a frontend app
+A jumping off point for building a frontend application
 
 ### Getting started
 
-#### helpful links if you're new to TypeScript or Redux
+#### Helpful links if you're new to TypeScript or Redux
 - [TypeScript](https://github.com/Microsoft/TypeScript-React-Starter#creating-a-component)
 - [Redux](http://redux.js.org/#watch-the-30-free-videos)
 
-#### Clone repo
+#### Get project running
 - cd into cloned repo
 - yarn install
 - yarn start
