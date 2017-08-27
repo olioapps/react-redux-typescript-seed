@@ -48,12 +48,12 @@ class App extends React.Component<ApplicationProps, ApplicationState> {
     render(): JSX.Element {
         return (
             <ConnectedRouter history={history}>
-            <div>
-                <PublicRoute path="/" component={pageShell(LoginPage)}/>
-                <PrivateRoute path="/dashboard" component={pageShell(Dashboard)}/>
-            </div>
+                <div>
+                    <PublicRoute path="/" component={pageShell(LoginPage)}/>
+                    <PrivateRoute path="/dashboard" component={pageShell(Dashboard)}/>
+                </div>
             </ConnectedRouter>
-      )
+        )
     }
 }
 
