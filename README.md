@@ -20,13 +20,13 @@ A jumping off point for building a frontend application
 - then if you're posting your creds to the backend change login method to something like this
 ```js
 login = (username: string, password: string): HandledResp => {
-    return request.
-        post(this.buildUrl("/login")).
-        send({ username, password }).
-        type("application/json").
-        accept("application/json").
-        end().
-        then((res: Resp) => handleResp(res))
+      return request
+        .post(this.buildUrl("/login"))
+        .send({ username, password })
+        .type("application/json")
+        .accept("application/json")
+        .end()
+        .then((res: Resp) => handleResp(res))
         .catch((res: Resp) => handleResp(res))
 }
 ```
