@@ -37,14 +37,12 @@ export class Client  {
     }
 
     login = (username: string, password: string): HandledResp => {
-        return request.
-            get(this.buildUrl("/login")).
-            auth(username, password).
-            type("application/json").
-            accept("application/json").
-            end().
-            then((res: Resp) => handleResp(res))
+        return request
+            .get(this.buildUrl("/login"))
+            .auth(username, password)
+            .type("application/json")
+            .accept("application/json")
+            .then((res: Resp) => handleResp(res))
             .catch((res: Resp) => handleResp(res))
-
     }
 }
