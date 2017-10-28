@@ -84,7 +84,6 @@
     "start-js": "node scripts/start.js",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && node scripts/build.js",
-    "deploy": "./push_to_gcloud.sh",
     "test": "node scripts/test.js --env=jsdom",
     "test:coverage": "npm run test -- --coverage",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
