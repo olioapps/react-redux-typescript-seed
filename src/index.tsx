@@ -15,18 +15,6 @@ const client = new ApolloClient({
     cache: new InMemoryCache()
 })
 
-// import { ApolloLink } from 'apollo-link';
-
-// const apolloLogger = new ApolloLink((operation, forward) => {
-//   console.log(operation.operationName);
-//   if (!forward) {return null}
-
-//   return forward(operation).map((result) => {
-//     console.log(`received result from ${operation.operationName}`);
-//     return result;
-//   })
-// });
-
 // tslint:disable
 ReactDOM.render(
     <ApolloProvider client={client as ApolloClient<any>}>
