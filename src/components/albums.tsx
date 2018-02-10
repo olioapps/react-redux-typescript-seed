@@ -41,7 +41,7 @@ class Albums extends React.Component<ChildProps<InputProps, Resp>, {}> {
         </div>
     )
 
-    render(){
+    render(): JSX.Element {
         const { data } = this.props
         const discs = data && data.discs
 
