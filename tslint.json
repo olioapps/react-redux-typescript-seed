@@ -118,7 +118,6 @@
         "readonly-keyword": true,
         "readonly-array": true,
         "no-let": true,
-
         // // Functional style rules
         // "no-this": true
         // "no-class": true

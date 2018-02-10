@@ -9,6 +9,7 @@ import { setPageTitle } from "../../util/page_utils"
 import { Navbar } from "../../components/navbar/navbar"
 import { Button } from "../../components/button/button"
 import * as actions from "../../redux/actions"
+import Discs from "../../components/discs"
 
 const styles = require("./dashboard.module.css")
 
@@ -65,6 +66,7 @@ export class Dashboard extends React.Component<ReduxState & ReduxActions & Dashb
                 />
                 <br />
                 <br />
+                <Discs />
 
                 <Button >
                     Hi there
