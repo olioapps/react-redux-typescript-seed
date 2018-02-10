@@ -20,26 +20,27 @@ A jumping off point for building a frontend application
 - then if you're posting your creds to the backend change login method to something like this
 ```js
 login = (username: string, password: string): HandledResp => {
-    return request.
-        post(this.buildUrl("/login")).
-        send({ username, password }).
-        type("application/json").
-        accept("application/json").
-        end().
-        then((res: Resp) => handleResp(res))
+    return request
+        .post(this.buildUrl("/login"))
+        .send({ username, password })
+        .type("application/json")
+        .accept("application/json")
+        .end()
+        .then((res: Resp) => handleResp(res))
         .catch((res: Resp) => handleResp(res))
 }
 ```
 - then uncomment code in session_sagas .ts
 
 #### Adding a route
-- update src/index.tsx
+- update src/app.tsx
 ```js
 ...
 import YourComponent from "./pages/your_component/your_component"
+...
 
-ReactDOM.render(
-    <Provider store={store}>
+render(): JSX.Element {
+    return (
         <ConnectedRouter history={history}>
             <div>
                 <PublicRoute path="/" component={pageShell(LoginPage)}/>
@@ -47,9 +48,8 @@ ReactDOM.render(
                 <PrivateRoute path="/your_route" component={pageShell(YourComponent)}/>
             </div>
         </ConnectedRouter>
-    </Provider>,
-    document.getElementById("root"),
-)
+    )
+}
 ```
 
 #### Includes component library [blueprintjs](http://blueprintjs.com//docs/)
