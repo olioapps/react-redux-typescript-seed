@@ -10,6 +10,7 @@ import { Navbar } from "../../components/navbar/navbar"
 import { Button } from "../../components/button/button"
 import * as actions from "../../redux/actions"
 import Discs from "../../components/discs"
+import Albums from "../../components/albums"
 
 const styles = require("./dashboard.module.css")
 
@@ -66,7 +67,10 @@ export class Dashboard extends React.Component<ReduxState & ReduxActions & Dashb
                 />
                 <br />
                 <br />
-                <Discs />
+                <div style={{display: "flex", flexDirection: "row"}}>
+                    <Discs />
+                    <Albums />
+                </div>
 
                 <Button >
                     Hi there
