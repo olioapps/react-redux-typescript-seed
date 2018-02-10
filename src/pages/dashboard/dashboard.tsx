@@ -11,6 +11,8 @@ import { Button } from "../../components/button/button"
 import * as actions from "../../redux/actions"
 import Discs from "../../components/discs"
 import Albums from "../../components/albums"
+import Vinyl from "../../components/vinyl"
+import { genericRouteProps } from "../../util/page_utils"
 
 const styles = require("./dashboard.module.css")
 
@@ -70,6 +72,7 @@ export class Dashboard extends React.Component<ReduxState & ReduxActions & Dashb
                 <div style={{display: "flex", flexDirection: "row"}}>
                     <Discs />
                     <Albums />
+                    <Vinyl  {...genericRouteProps} />
                 </div>
 
                 <Button >

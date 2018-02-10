@@ -1,7 +1,8 @@
 import * as React from "react"
 import { graphql } from "react-apollo"
 import gql from "graphql-tag"
-import { ChildProps } from "react-apollo";
+import { ChildProps } from "react-apollo"
+import { Session } from "../redux/core"
 
 const DISCS_QUERY = gql`
     query GetAllDiscs {
@@ -14,7 +15,7 @@ const DISCS_QUERY = gql`
     }
 `
 interface InputProps {
-    // possibly props from redux?
+    readonly session?: Session
 }
 
 interface Disc {
@@ -42,7 +43,7 @@ class Albums extends React.Component<ChildProps<InputProps, Resp>, {}> {
     )
 
     render(): JSX.Element {
-        const { data } = this.props
+        const { data, session } = this.props
         const discs = data && data.discs
 
         if (data && data.loading) {
@@ -55,6 +56,7 @@ class Albums extends React.Component<ChildProps<InputProps, Resp>, {}> {
         return (
             <div>
                 <ul>{discs && discs.map((d: Disc, i: number) => <li key={i}>{this.renderDisc(d)}</li>)}</ul>
+                {session && session.loggedIn === false && <div>with props from redux</div>}
             </div>
         )
     }
