@@ -60,13 +60,13 @@ const deleteTodoListMutation = gql`
 
 interface InputProps {
     readonly session?: Session
-    readonly addTodoList?: (input: any) => Promise<{readonly refech: any}> // tslint:disable-line
-    readonly deleteTodoList: (input: any) => Promise<{readonly refech: any}> // tslint:disable-line
+    readonly addTodoList?: (input: NewList) => Promise<{readonly refech: {}}> // tslint:disable-line
+    readonly deleteTodoList: (input: DeleteList) => Promise<{readonly refech: {}}> // tslint:disable-line
 }
 
 const withAlbums = compose(
-    graphql<any>(deleteTodoListMutation, {name: "deleteTodoList"}),
-    graphql<any>(addTodoListMutation, { name: "addTodoList" }),
+    graphql<{}>(deleteTodoListMutation, {name: "deleteTodoList"}),
+    graphql<{}>(addTodoListMutation, { name: "addTodoList" }),
     graphql<AllTodoLists, InputProps>(allTodoLists, {}),
 )
 
@@ -77,8 +77,14 @@ interface NewList {
     }
 }
 
+interface DeleteList {
+    readonly variables: {
+        readonly id: number
+    }
+}
+
 class Albums extends React.Component<ChildProps<InputProps, AllTodoLists>, {}> {
-    constructor(props: any ) {
+    constructor(props: ChildProps<InputProps, AllTodoLists> ) {
         super(props)
         this.renderTodoLists = this.renderTodoLists.bind(this)
     }
@@ -123,7 +129,7 @@ class Albums extends React.Component<ChildProps<InputProps, AllTodoLists>, {}> {
         return (
             <div>
                 <ul>
-                    {todoLists && todoLists.edges.map((tl: any, i: number) => (
+                    {todoLists && todoLists.edges.map((tl: TodoList, i: number) => (
                         <div key={`list-${i}`}>
                             <li >{this.renderTodoLists(tl, i)}</li>
                         </div>
