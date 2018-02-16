@@ -68,7 +68,11 @@ export default withDiscsQuery(({data}) => {
 
     return (
         <div>
-            <ul>{todoLists && todoLists.edges.map((tl: any, i: number) => <li key={i}>{renderTodoLists(tl, i)}</li>)}</ul>
+            <ul>
+              {todoLists && todoLists.edges.map((tl: TodoList, i: number) => (
+                <li key={i}>{renderTodoLists(tl, i)}</li>
+              ))
+            }</ul>
         </div>
     )
 })
