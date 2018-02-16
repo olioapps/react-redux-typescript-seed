@@ -7,12 +7,12 @@ import { connect } from "react-redux"
 import { AppState, Session } from "../../redux/core"
 import { setPageTitle } from "../../util/page_utils"
 import { Navbar } from "../../components/navbar/navbar"
-import { Button } from "../../components/button/button"
+// import { Button } from "../../components/button/button"
 import * as actions from "../../redux/actions"
 import Discs from "../../components/discs"
 import Albums from "../../components/albums"
-import Vinyl from "../../components/vinyl"
-import { genericRouteProps } from "../../util/page_utils"
+// import Vinyl from "../../components/vinyl"
+// import { genericRouteProps } from "../../util/page_utils"
 
 const styles = require("./dashboard.module.css")
 
@@ -72,12 +72,12 @@ export class Dashboard extends React.Component<ReduxState & ReduxActions & Dashb
                 <div style={{display: "flex", flexDirection: "row"}}>
                     <Discs />
                     <Albums />
-                    <Vinyl  {...genericRouteProps} />
+                    {/* <Vinyl  {...genericRouteProps} /> */}
                 </div>
 
-                <Button >
+                {/* <Button >
                     Hi there
-                </Button>
+                </Button> */}
             </div>
         )
     }
