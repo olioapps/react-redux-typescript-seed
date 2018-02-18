@@ -7,7 +7,7 @@ import { Session } from "../redux/core"
 interface Todo {
     readonly node: {
       readonly id: string
-      readonly name: string
+      readonly name: string,
     }
   }
 
@@ -16,15 +16,18 @@ interface Todo {
       readonly id: string
       readonly name: string
       readonly todos: {
-         readonly edges: ReadonlyArray<Todo>
-      }
+         readonly edges: ReadonlyArray<Todo>,
+      },
     }
   }
 
-  interface AllTodoLists {
+  interface Response {
     readonly allTodoLists: {
-      readonly edges: ReadonlyArray<TodoList>
+      readonly edges: ReadonlyArray<TodoList>,
     }
+    readonly loading: boolean
+    readonly error: {}
+    readonly refetch: {}
   }
 
   const allTodoLists = gql`query {
@@ -60,34 +63,34 @@ const deleteTodoListMutation = gql`
 
 interface InputProps {
     readonly session?: Session
-    readonly addTodoList?: (input: NewList) => Promise<{readonly refech: {}}> // tslint:disable-line
-    readonly deleteTodoList: (input: DeleteList) => Promise<{readonly refech: {}}> // tslint:disable-line
+    readonly addTodoList: (input: NewList) => Promise<Response> // tslint:disable-line
+    readonly deleteTodoList: (input: DeleteList) => Promise<Response> // tslint:disable-line
 }
 
-const withAlbums = compose(
+const withTodoLists = compose(
     graphql<{}>(deleteTodoListMutation, {name: "deleteTodoList"}),
     graphql<{}>(addTodoListMutation, { name: "addTodoList" }),
-    graphql<AllTodoLists, InputProps>(allTodoLists, {}),
+    graphql<Response, InputProps>(allTodoLists, {}),
 )
-
 
 interface NewList {
     readonly variables: {
-        readonly name: string
+        readonly name: string,
     }
 }
 
 interface DeleteList {
     readonly variables: {
-        readonly id: number
+        readonly id: number,
     }
 }
 
-class Albums extends React.Component<ChildProps<InputProps, AllTodoLists>, {}> {
-    constructor(props: ChildProps<InputProps, AllTodoLists> ) {
+class TodoLists extends React.Component<ChildProps<InputProps, Response>, {}> {
+    constructor(props: ChildProps<InputProps, Response> ) {
         super(props)
         this.renderTodoLists = this.renderTodoLists.bind(this)
     }
+
     renderTodo(t: Todo, i: number): JSX.Element | undefined {
         if (t.node.name === "") {
             return
@@ -95,8 +98,9 @@ class Albums extends React.Component<ChildProps<InputProps, AllTodoLists>, {}> {
 
         return (<li key={`doh-${i}`}>{t.node.name}</li>)
     }
-    renderTodoLists(tl: TodoList, i: number) {
-        const todoListId = parseInt(atob(tl.node.id).split(':')[1], 10)
+
+    renderTodoLists(tl: TodoList, i: number): JSX.Element {
+        const todoListId = parseInt(atob(tl.node.id).split(":")[1], 10)
         return (
             <div key={`todo-${i}`}>
              <div>
@@ -105,7 +109,7 @@ class Albums extends React.Component<ChildProps<InputProps, AllTodoLists>, {}> {
                     .then(this.props.data && this.props.data.refetch)}>delete</button>
              </div>
               <ul>
-                {tl.node.todos.edges.map((t: Todo, i: number) => this.renderTodo(t, i))}
+                {tl.node.todos.edges.map((t: Todo, idx: number) => this.renderTodo(t, idx))}
               </ul>
             </div>
         )
@@ -137,11 +141,13 @@ class Albums extends React.Component<ChildProps<InputProps, AllTodoLists>, {}> {
                 </ul>
                 {session && session.loggedIn === false && <div>with props from redux</div>}
                 {createDisc &&
-                (<button onClick={() => createDisc && createDisc(newList)
-                    .then(this.props.data && this.props.data.refetch)}>Add disc</button>)}
+                (
+                    <button onClick={() => createDisc && createDisc(newList)
+                        .then(this.props.data && this.props.data.refetch)}>Add disc</button>
+                )}
             </div>
         )
     }
 }
 
-export default withAlbums(Albums);
+export default withTodoLists(TodoLists)

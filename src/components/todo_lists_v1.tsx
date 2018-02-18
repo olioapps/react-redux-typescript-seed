@@ -5,7 +5,7 @@ import gql from "graphql-tag"
 interface Todo {
   readonly node: {
     readonly id: string
-    readonly name: string
+    readonly name: string,
   }
 }
 
@@ -14,15 +14,18 @@ interface TodoList {
     readonly id: string
     readonly name: string
     readonly todos: {
-       readonly edges: ReadonlyArray<Todo>
-    }
+       readonly edges: ReadonlyArray<Todo>,
+    },
   }
 }
 
-interface AllTodoLists {
+interface Response {
   readonly allTodoLists: {
-    readonly edges: ReadonlyArray<TodoList>
+    readonly edges: ReadonlyArray<TodoList>,
   }
+  readonly loading: boolean
+  readonly error: {}
+  readonly refetch: {}
 }
 
 const allTodoLists = gql`query {
@@ -45,18 +48,18 @@ const allTodoLists = gql`query {
    }
 }`
 
-const withDiscsQuery  =  graphql<AllTodoLists>(allTodoLists)
+const withTodoListsQuery  =  graphql<Response>(allTodoLists)
 
 const renderTodoLists = (tl: TodoList, i: number) => (
   <div key={`blah-${i}`}>
     <div>{tl.node.name}</div>
     <ul>
-      {tl.node.todos.edges.map((t: Todo, i: number) => (<li key={`todo-${i}`}>{t.node.name}</li>))}
+      {tl.node.todos.edges.map((t: Todo, idx: number) => (<li key={`todo-${idx}`}>{t.node.name}</li>))}
     </ul>
   </div>
 )
 
-export default withDiscsQuery(({data}) => {
+export default withTodoListsQuery(({data}) => {
     const todoLists = data && data.allTodoLists
 
     if (data && data.loading) {

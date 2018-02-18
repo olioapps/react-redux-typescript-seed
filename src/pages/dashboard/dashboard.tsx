@@ -9,10 +9,10 @@ import { setPageTitle } from "../../util/page_utils"
 import { Navbar } from "../../components/navbar/navbar"
 // import { Button } from "../../components/button/button"
 import * as actions from "../../redux/actions"
-import Discs from "../../components/discs"
-import Albums from "../../components/albums"
-// import Vinyl from "../../components/vinyl"
-// import { genericRouteProps } from "../../util/page_utils"
+import TLV1 from "../../components/todo_lists_v1"
+import TLV2 from "../../components/todo_lists_v2"
+import TLV3 from"../../components/todo_lists_v3"
+import { genericRouteProps } from "../../util/page_utils"
 
 const styles = require("./dashboard.module.css")
 
@@ -70,9 +70,9 @@ export class Dashboard extends React.Component<ReduxState & ReduxActions & Dashb
                 <br />
                 <br />
                 <div style={{display: "flex", flexDirection: "row"}}>
-                    <Discs />
-                    <Albums />
-                    {/* <Vinyl  {...genericRouteProps} /> */}
+                    <TLV1 />
+                    <TLV2 />
+                    <TLV3  {...genericRouteProps} />
                 </div>
 
                 {/* <Button >
