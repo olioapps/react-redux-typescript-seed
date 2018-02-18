@@ -10,7 +10,7 @@ import { Navbar } from "../../components/navbar/navbar"
 import * as actions from "../../redux/actions"
 import TLV1 from "../../components/todo_lists_v1"
 import TLV2 from "../../components/todo_lists_v2"
-import TLV3 from"../../components/todo_lists_v3"
+import TLV3 from "../../components/todo_lists_v3"
 import { genericRouteProps } from "../../util/page_utils"
 
 const styles = require("./dashboard.module.css")
