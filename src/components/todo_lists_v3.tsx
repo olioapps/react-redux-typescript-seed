@@ -35,8 +35,6 @@ export class TodoListsV2 extends React.Component<ReduxState & ReduxActions & Tod
         }
     }
 
-
-
     render(): JSX.Element {
         return <TodoLists session={this.props.session} />
     }
