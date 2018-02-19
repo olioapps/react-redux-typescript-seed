@@ -3,60 +3,64 @@ import { graphql } from "react-apollo"
 import gql from "graphql-tag"
 
 interface Todo {
-  readonly node: {
-    readonly id: string
-    readonly name: string,
-  }
+    readonly node: {
+        readonly id: string
+        readonly name: string,
+    }
 }
 
 interface TodoList {
-  readonly node: {
-    readonly id: string
-    readonly name: string
-    readonly todos: {
-       readonly edges: ReadonlyArray<Todo>,
-    },
-  }
+    readonly node: {
+        readonly id: string
+        readonly name: string
+        readonly todos: {
+            readonly edges: ReadonlyArray<Todo>,
+        },
+    }
 }
 
 interface Response {
-  readonly allTodoLists: {
-    readonly edges: ReadonlyArray<TodoList>,
-  }
-  readonly loading: boolean
-  readonly error: {}
-  readonly refetch: {}
+    readonly allTodoLists: {
+        readonly edges: ReadonlyArray<TodoList>,
+    }
+    readonly loading: boolean
+    readonly error: {}
+    readonly refetch: {}
 }
 
 const allTodoLists = gql`query {
-  allTodoLists {
-       edges {
-           node {
-               id
-               name
-               todos {
-                   edges {
-                       node {
-                           id
-                           name
-                           todoListId
-                       }
-                   }
-               }
-           }
-       }
-   }
+    allTodoLists {
+        edges {
+            node {
+                id
+                name
+                todos {
+                    edges {
+                        node {
+                            id
+                            name
+                            todoListId
+                        }
+                    }
+                }
+            }
+        }
+    }
 }`
 
 const withTodoListsQuery  =  graphql<Response>(allTodoLists)
 
+const renderTodo = (t: Todo, idx: number): JSX.Element => (
+    <li key={`todo-${idx}`}>{t.node.name}</li>
+)
+
 const renderTodoLists = (tl: TodoList, i: number) => (
-  <div key={`blah-${i}`}>
-    <div>{tl.node.name}</div>
-    <ul>
-      {tl.node.todos.edges.map((t: Todo, idx: number) => (<li key={`todo-${idx}`}>{t.node.name}</li>))}
-    </ul>
-  </div>
+    <div key={`blah-${i}`}>
+        <div>{tl.node.name}</div>
+        <ul>
+            {tl.node.todos.edges.map((t: Todo, idx: number) => renderTodo(t, idx))}
+        </ul>
+    </div>
 )
 
 export default withTodoListsQuery(({data}) => {
@@ -72,9 +76,9 @@ export default withTodoListsQuery(({data}) => {
     return (
         <div>
             <ul>
-              {todoLists && todoLists.edges.map((tl: TodoList, i: number) => (
-                <li key={i}>{renderTodoLists(tl, i)}</li>
-              ))
+                {todoLists && todoLists.edges.map((tl: TodoList, i: number) => (
+                    <li key={i}>{renderTodoLists(tl, i)}</li>
+                ))
             }</ul>
         </div>
     )

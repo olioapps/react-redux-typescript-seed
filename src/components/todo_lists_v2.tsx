@@ -63,8 +63,8 @@ const deleteTodoListMutation = gql`
 
 interface InputProps {
     readonly session?: Session
-    readonly addTodoList: (input: NewList) => Promise<Response> // tslint:disable-line
-    readonly deleteTodoList: (input: DeleteList) => Promise<Response> // tslint:disable-line
+    readonly addTodoList: (input: NewList) => Promise<Response>
+    readonly deleteTodoList: (input: DeleteList) => Promise<Response>
 }
 
 const withTodoLists = compose(
@@ -103,14 +103,14 @@ class TodoLists extends React.Component<ChildProps<InputProps, Response>, {}> {
         const todoListId = parseInt(atob(tl.node.id).split(":")[1], 10)
         return (
             <div key={`todo-${i}`}>
-             <div>
+            <div>
                 {tl.node.name}
                 <button onClick={() => this.props.deleteTodoList({variables: {id: todoListId}})
                     .then(this.props.data && this.props.data.refetch)}>delete</button>
-             </div>
-              <ul>
-                {tl.node.todos.edges.map((t: Todo, idx: number) => this.renderTodo(t, idx))}
-              </ul>
+            </div>
+                <ul>
+                    {tl.node.todos.edges.map((t: Todo, idx: number) => this.renderTodo(t, idx))}
+                </ul>
             </div>
         )
     }

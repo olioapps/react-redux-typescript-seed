@@ -18,8 +18,8 @@ const client = new ApolloClient({
 // tslint:disable
 ReactDOM.render(
     <ApolloProvider client={client as ApolloClient<any>}>
-    <Provider store={store}>
-        <App />
+        <Provider store={store}>
+            <App />
         </Provider>
     </ApolloProvider>,
     document.getElementById("root"),
